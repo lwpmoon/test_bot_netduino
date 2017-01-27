@@ -1,0 +1,108 @@
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\le\test_bot_netduino.exe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\be\test_bot_netduino.exe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\le\test_bot_netduino.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\be\test_bot_netduino.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\test_bot_netduino.exe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\test_bot_netduino.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\le\test_bot_netduino.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\le\test_bot_netduino.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\be\test_bot_netduino.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\be\test_bot_netduino.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\GoBus.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.Netduino.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\GoBus.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.Netduino.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\GoBus.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.Netduino.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\GoBus.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.Netduino.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\GoBus.dll
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.dll
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.Netduino.dll
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.Netduino.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\GoBus.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\obj\Debug\test_bot_netduino.csprojResolveAssemblyReference.cache
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\obj\Debug\TinyCLR_DebugReferences.cache
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\obj\Debug\be\test_bot_netduino.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\obj\Debug\be\test_bot_netduino.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\obj\Debug\le\test_bot_netduino.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\obj\Debug\le\test_bot_netduino.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\obj\Debug\test_bot_netduino.exe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\obj\Debug\test_bot_netduino.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.Motor.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.ShieldDriver.AdafruitV1.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.ShieldDriver.AdafruitV2.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.ShieldDriver.Simulator.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.ShieldDriver.SparkfunArdumoto.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.Motor.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.ShieldDriver.AdafruitV1.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.ShieldDriver.AdafruitV2.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.ShieldDriver.Simulator.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.ShieldDriver.SparkfunArdumoto.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pe
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.Motor.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.ShieldDriver.AdafruitV1.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.ShieldDriver.AdafruitV2.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.ShieldDriver.Simulator.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\TA.NetMF.ShieldDriver.SparkfunArdumoto.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.Motor.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.ShieldDriver.AdafruitV1.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.ShieldDriver.AdafruitV2.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.ShieldDriver.Simulator.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\TA.NetMF.ShieldDriver.SparkfunArdumoto.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.NetduinoPlus.pdbx
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.Motor.dll
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.ShieldDriver.AdafruitV1.dll
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.ShieldDriver.AdafruitV2.dll
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.ShieldDriver.Simulator.dll
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.ShieldDriver.SparkfunArdumoto.dll
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.NetduinoPlus.dll
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.Motor.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.ShieldDriver.AdafruitV1.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.ShieldDriver.AdafruitV2.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.ShieldDriver.Simulator.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\TA.NetMF.ShieldDriver.SparkfunArdumoto.pdb
+c:\users\s00013084\documents\visual studio 2015\Projects\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.NetduinoPlus.pdb
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\le\test_bot_netduino.exe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\be\test_bot_netduino.exe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\le\test_bot_netduino.pdb
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\be\test_bot_netduino.pdb
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\test_bot_netduino.exe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\test_bot_netduino.pdb
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\le\test_bot_netduino.pe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\le\test_bot_netduino.pdbx
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\be\test_bot_netduino.pe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\be\test_bot_netduino.pdbx
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\LE\GoBus.pe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.pe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.Netduino.pe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\BE\GoBus.pe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.pe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.Netduino.pe
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\LE\GoBus.pdbx
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.pdbx
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\LE\SecretLabs.NETMF.Hardware.Netduino.pdbx
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\BE\GoBus.pdbx
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.pdbx
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\BE\SecretLabs.NETMF.Hardware.Netduino.pdbx
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\GoBus.dll
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.dll
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.Netduino.dll
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.pdb
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\SecretLabs.NETMF.Hardware.Netduino.pdb
+Y:\test_bot_netduino\test_bot_netduino\bin\Debug\GoBus.pdb
+Y:\test_bot_netduino\test_bot_netduino\obj\Debug\be\test_bot_netduino.pe
+Y:\test_bot_netduino\test_bot_netduino\obj\Debug\be\test_bot_netduino.pdbx
+Y:\test_bot_netduino\test_bot_netduino\obj\Debug\le\test_bot_netduino.pe
+Y:\test_bot_netduino\test_bot_netduino\obj\Debug\le\test_bot_netduino.pdbx
+Y:\test_bot_netduino\test_bot_netduino\obj\Debug\test_bot_netduino.exe
+Y:\test_bot_netduino\test_bot_netduino\obj\Debug\test_bot_netduino.pdb
+Y:\test_bot_netduino\test_bot_netduino\obj\Debug\test_bot_netduino.csprojResolveAssemblyReference.cache
+Y:\test_bot_netduino\test_bot_netduino\obj\Debug\TinyCLR_DebugReferences.cache

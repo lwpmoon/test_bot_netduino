@@ -1,0 +1,6 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files (x86)\Secret Labs\Netduino SDK\Assemblies\v4.3\SecretLabs.NETMF.Hardware.Netduino.dll" /&gt;&#xD;
+  &lt;Assembly Path="Y:\test_bot_netduino\packages\HydraMF.Hardware.Netduino.0.2\lib\netmf41\le\HydraMF.Hardware.Netduino.dll" /&gt;&#xD;
+  &lt;Assembly Path="Y:\test_bot_netduino\packages\HydraMF.Hardware.0.2\lib\netmf41\le\HydraMF.Hardware.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String></wpf:ResourceDictionary>
