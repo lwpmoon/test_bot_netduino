@@ -32,9 +32,12 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
+    <Compile Include="I2CBus.cs" />
     <Compile Include="MotorShieldDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Receiver.cs" />
+    <Compile Include="Tools.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.SPOT.Hardware" />
@@ -46,5 +49,28 @@
     <Reference Include="SecretLabs.NETMF.Hardware.Netduino" />
     <Reference Include="System" />
     <Reference Include="GoBus" />
+    <Reference Include="TA.NetMF.Motor, Version=0.3.0.83, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TA.NetMF.MotorControl.0.3.0\lib\netmf43\TA.NetMF.Motor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TA.NetMF.ShieldDriver.AdafruitV1, Version=0.3.0.83, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TA.NetMF.MotorControl.0.3.0\lib\netmf43\TA.NetMF.ShieldDriver.AdafruitV1.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TA.NetMF.ShieldDriver.AdafruitV2, Version=0.3.0.83, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TA.NetMF.MotorControl.0.3.0\lib\netmf43\TA.NetMF.ShieldDriver.AdafruitV2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TA.NetMF.ShieldDriver.Simulator, Version=0.3.0.83, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TA.NetMF.MotorControl.0.3.0\lib\netmf43\TA.NetMF.ShieldDriver.Simulator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="TA.NetMF.ShieldDriver.SparkfunArdumoto, Version=0.3.0.83, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TA.NetMF.MotorControl.0.3.0\lib\netmf43\TA.NetMF.ShieldDriver.SparkfunArdumoto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

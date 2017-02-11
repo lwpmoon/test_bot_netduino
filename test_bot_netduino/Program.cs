@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Threading;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
+using RockSatC_2016.Utility;
 using SecretLabs.NETMF.Hardware;
 using SecretLabs.NETMF.Hardware.Netduino;
 
-//No longer using this driver
-//using HydraMF.Hardware.SparkFun;
+using TA.NetMF;
+
 
 namespace test_bot_netduino
 {
@@ -19,34 +21,67 @@ namespace test_bot_netduino
 
         public static double frequency = 490;
 
-        static OutputPort RedLED = new OutputPort(Pins.GPIO_PIN_D4, true);
-        static OutputPort YellowLED = new OutputPort(Pins.GPIO_PIN_D5, true);
-        static OutputPort GreenLED = new OutputPort(Pins.GPIO_PIN_D6, true);
-        static OutputPort BlueLED = new OutputPort(Pins.GPIO_PIN_D7, true);
+        static OutputPort RedLED = new OutputPort(Pins.GPIO_PIN_D4, false);
+        static OutputPort YellowLED = new OutputPort(Pins.GPIO_PIN_D5, false);
+        static OutputPort GreenLED = new OutputPort(Pins.GPIO_PIN_D6, false);
+        static OutputPort BlueLED = new OutputPort(Pins.GPIO_PIN_D7, false);
 
         
         static OutputPort leftDir = new OutputPort(Pins.GPIO_PIN_D12, false);
         static PWM leftPWM = new PWM(PWMChannels.PWM_PIN_D3, frequency, 1, false);
         static OutputPort rightDir = new OutputPort(Pins.GPIO_PIN_D13, false);
         static PWM rightPWM = new PWM(PWMChannels.PWM_PIN_D11, frequency, 1, false);
+
         
-
-        //This is next to integrate
-        //static MotorShieldDriver _motorShield = new MotorShieldDriver();
-
-        //Hydra driver
-        //static DcMotor leftMotor = new DcMotor(new SimpleHBridge(PWMChannels.PWM_PIN_D3, Pins.GPIO_PIN_D12),speed);
-        //static DcMotor rightMotor = new DcMotor(new SimpleHBridge(PWMChannels.PWM_PIN_D11, Pins.GPIO_PIN_D13),speed);
-
-        //static Ardumoto motorShield = new Ardumoto(Cpu.Pin.GPIO_Pin12, Cpu.Pin.GPIO_Pin3, Cpu.Pin.GPIO_Pin13, Cpu.Pin.GPIO_Pin11);
-        //static Ardumoto.Motor leftMotor = new Ardumoto.Motor(Cpu.Pin.GPIO_Pin12, Cpu.Pin.GPIO_Pin3);
-
+        
         static AnalogInput irPin = new AnalogInput(AnalogChannels.ANALOG_PIN_A0);
         static AnalogInput activePin = new AnalogInput(AnalogChannels.ANALOG_PIN_A2);
 
+
+        static Receiver Beacon = new Receiver();
+
+        /*
+        public class receiver
+        {
+            private I2CDevice.Configuration _configuration;
+            private int[] _busData;
+            private byte _address = 0x08;
+            public receiver(int clockRate, int packetCount)
+            {
+                _configuration = new I2CDevice.Configuration(_address, clockRate);
+                _busData = new int[packetCount];
+               
+                I2CDevice.I2CTransaction[] xActions = new I2CDevice.I2CTransaction[2];
+            }
+
+            public bool beaconCheck()
+            {
+                
+                return true;
+            }
+
+            public int getHeading()
+            {
+                return 1;
+            }
+            //beacon 
+            
+        }*/
+
         public static void Main()
         {
-            loop();
+            setup();
+            //loop();
+            Loop2();
+        }
+
+        public static void Loop2()
+        {
+            while (true)
+            {
+                Beacon.Location();
+                Thread.Sleep(2000);
+            }
         }
 
         public static void loop()
@@ -54,6 +89,8 @@ namespace test_bot_netduino
             while (true)
             {
                 readyy = CheckReady();
+                
+                
                 if (readyy == true) GreenLED.Write(true);
                 else GreenLED.Write(false);
                 sensorValue = Look();
@@ -85,8 +122,9 @@ namespace test_bot_netduino
                             //do nothing
                             Debug.Print("Too close...");
                             readyy = CheckReady();
-                            Halt();
+                            //Halt();
                             //MotorShieldDriver.Right(255, readyy);
+                            Right(255, readyy);
                             sensorValue = Look();
                         }
                     }
@@ -158,6 +196,7 @@ namespace test_bot_netduino
                 rightPWM.Start();
             }
             else Halt();
+            
         }
 
         void left1358014915(int s, bool readyy)
@@ -172,12 +211,21 @@ namespace test_bot_netduino
             }
             else Halt();
         }
-        
 
         public static void Halt()
         {
             leftPWM.Stop();
             rightPWM.Stop();
+        }
+
+        public static int setup()
+        {
+            int error = 0;
+            Thread.Sleep(10000);
+            //Enter setup statments here
+            //Receiver.initialize();
+            //var scout = new Receiver();
+            return error;
         }
 
         /* Building in progress
@@ -193,5 +241,207 @@ namespace test_bot_netduino
             }
             else MotorShieldDriver.Halt();
         }*/
+
+        /*
+        public class I2CBus : IDisposable
+        {
+            private static I2CBus _instance = null;
+            private static readonly object LockObject = new object();
+
+            public static I2CBus GetInstance()
+            {
+                lock (LockObject)
+                {
+                    if (_instance == null)
+                    {
+                        _instance = new I2CBus();
+                    }
+                    return _instance;
+                }
+            }
+
+
+            private I2CDevice _slaveDevice;
+
+            private I2CBus()
+            {
+                this._slaveDevice = new I2CDevice(new I2CDevice.Configuration(0, 0));
+            }
+
+            public void Dispose()
+            {
+                this._slaveDevice.Dispose();
+            }
+
+            /// <summary>
+            /// Generic write operation to I2C slave device.
+            /// </summary>
+            /// <param name="config">I2C slave device configuration.</param>
+            /// <param name="writeBuffer">The array of bytes that will be sent to the device.</param>
+            /// <param name="transactionTimeout">The amount of time the system will wait before resuming execution of the transaction.</param>
+            public void Write(I2CDevice.Configuration config, byte[] writeBuffer, int transactionTimeout)
+            {
+                // Set i2c device configuration.
+                _slaveDevice.Config = config;
+
+                // create an i2c write transaction to be sent to the device.
+                I2CDevice.I2CTransaction[] writeXAction = new I2CDevice.I2CTransaction[] { I2CDevice.CreateWriteTransaction(writeBuffer) };
+
+                lock (_slaveDevice)
+                {
+                    // the i2c data is sent here to the device.
+                    int transferred = _slaveDevice.Execute(writeXAction, transactionTimeout);
+
+                    // make sure the data was sent.
+                    if (transferred != writeBuffer.Length)
+                        throw new Exception("Could not write to device.");
+                }
+            }
+
+            /// <summary>
+            /// Generic read operation from I2C slave device.
+            /// </summary>
+            /// <param name="config">I2C slave device configuration.</param>
+            /// <param name="readBuffer">The array of bytes that will contain the data read from the device.</param>
+            /// <param name="transactionTimeout">The amount of time the system will wait before resuming execution of the transaction.</param>
+            public void Read(I2CDevice.Configuration config, byte[] readBuffer, int transactionTimeout)
+            {
+                // Set i2c device configuration.
+                _slaveDevice.Config = config;
+
+                // create an i2c read transaction to be sent to the device.
+                I2CDevice.I2CTransaction[] readXAction = new I2CDevice.I2CTransaction[] { I2CDevice.CreateReadTransaction(readBuffer) };
+
+                lock (_slaveDevice)
+                {
+                    // the i2c data is received here from the device.
+                    int transferred = _slaveDevice.Execute(readXAction, transactionTimeout);
+
+                    // make sure the data was received.
+                    if (transferred != readBuffer.Length)
+                        throw new Exception("Could not read from device.");
+                }
+            }
+
+            /// <summary>
+            /// Read array of bytes at specific register from the I2C slave device.
+            /// </summary>
+            /// <param name="config">I2C slave device configuration.</param>
+            /// <param name="register">The register to read bytes from.</param>
+            /// <param name="readBuffer">The array of bytes that will contain the data read from the device.</param>
+            /// <param name="transactionTimeout">The amount of time the system will wait before resuming execution of the transaction.</param>
+            public void ReadRegister(I2CDevice.Configuration config, byte register, byte[] readBuffer, int transactionTimeout)
+            {
+                byte[] registerBuffer = {register};
+                Write(config, registerBuffer, transactionTimeout);
+                Read(config, readBuffer, transactionTimeout);
+            }
+
+            /// <summary>
+            /// Write array of bytes value to a specific register on the I2C slave device.
+            /// </summary>
+            /// <param name="config">I2C slave device configuration.</param>
+            /// <param name="register">The register to send bytes to.</param>
+            /// <param name="writeBuffer">The array of bytes that will be sent to the device.</param>
+            /// <param name="transactionTimeout">The amount of time the system will wait before resuming execution of the transaction.</param>
+            public void WriteRegister(I2CDevice.Configuration config, byte register, byte[] writeBuffer, int transactionTimeout)
+            {
+                byte[] registerBuffer = { register };
+                Write(config, registerBuffer, transactionTimeout);
+                Write(config, writeBuffer, transactionTimeout);
+            }
+
+            /// <summary>
+            /// Write a byte value to a specific register on the I2C slave device.
+            /// </summary>
+            /// <param name="config">I2C slave device configuration.</param>
+            /// <param name="register">The register to send bytes to.</param>
+            /// <param name="value">The byte that will be sent to the device.</param>
+            /// <param name="transactionTimeout">The amount of time the system will wait before resuming execution of the transaction.</param>
+            public void WriteRegister(I2CDevice.Configuration config, byte register, byte value, int transactionTimeout)
+            {
+                byte[] writeBuffer = { register, value };
+                Write(config, writeBuffer, transactionTimeout);
+            }
+
+        }
+
+        public class Reciever
+        {
+            private I2CDevice.Configuration _slaveConfig;
+            private const int TransactionTimeout = 1000; // ms
+            private const byte ClockRateKHz = 100;
+            public byte Address { get; private set; }
+
+            /// <summary>
+            /// Example sensor constructor
+            /// </summary>
+            /// <param name="address">I2C device address of the example sensor</param>
+            public Reciever(byte address)
+            {
+                Address = address;
+                _slaveConfig = new I2CDevice.Configuration(address, ClockRateKHz);
+            }
+
+
+            public byte[] ReadBus()
+            {
+                // write register address
+                I2CBus.GetInstance().Write(_slaveConfig, new byte[] { 0xF2 }, TransactionTimeout);
+
+                // get MSB and LSB result
+                byte[] data = new byte[2];
+                I2CBus.GetInstance().Read(_slaveConfig, data, TransactionTimeout);
+
+                return data;
+            }
+
+            public byte[] ReadFromRegister()
+            {
+                // get MSB and LSB result
+                byte[] data = new byte[2];
+                I2CBus.GetInstance().ReadRegister(_slaveConfig, 0xF1, data, TransactionTimeout);
+
+                return data;
+            }
+
+            public void WriteToRegister()
+            {
+                I2CBus.GetInstance().WriteRegister(_slaveConfig, 0x3C, new byte[2] { 0xF4, 0x2E }, TransactionTimeout);
+            }
+
+
+        }
+        
+
+        I2CDevice.I2CWriteTransaction CreateWriteTransaction(byte[] buffer, uint internalAddress, byte internalAddressSize)
+        {
+            I2CDevice.I2CWriteTransaction writeTransaction = I2CDevice.CreateWriteTransaction(buffer);
+            Type writeTransactionType = typeof(I2CDevice.I2CWriteTransaction);
+
+            FieldInfo fieldInfo = writeTransactionType.GetField("Custom_InternalAddress", BindingFlags.NonPublic | BindingFlags.Instance);
+            fieldInfo.SetValue(writeTransaction, internalAddress);
+
+            fieldInfo = writeTransactionType.GetField("Custom_InternalAddressSize", BindingFlags.NonPublic | BindingFlags.Instance);
+            fieldInfo.SetValue(writeTransaction, internalAddressSize);
+
+            return writeTransaction;
+        }
+
+        I2CDevice.I2CReadTransaction CreateReadTransaction(byte[] buffer, uint internalAddress, byte internalAddressSize)
+        {
+            I2CDevice.I2CReadTransaction readTransaction = I2CDevice.CreateReadTransaction(buffer);
+            Type readTransactionType = typeof(I2CDevice.I2CReadTransaction);
+
+            FieldInfo fieldInfo = readTransactionType.GetField("Custom_InternalAddress", BindingFlags.NonPublic | BindingFlags.Instance);
+            fieldInfo.SetValue(readTransaction, internalAddress);
+
+            fieldInfo = readTransactionType.GetField("Custom_InternalAddressSize", BindingFlags.NonPublic | BindingFlags.Instance);
+            fieldInfo.SetValue(readTransaction, internalAddressSize);
+
+            return readTransaction;
+        }
+
+    */
     }
 }
