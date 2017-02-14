@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO.Ports;
 using System.Net;
 using System.Net.Sockets;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using Microsoft.SPOT;
 using Microsoft.SPOT.Hardware;
@@ -38,7 +40,9 @@ namespace test_bot_netduino
         static AnalogInput activePin = new AnalogInput(AnalogChannels.ANALOG_PIN_A2);
 
 
-        static Receiver Beacon = new Receiver();
+        //static Receiver Beacon = new Receiver();
+
+        static SerialPort serial = new SerialPort(SerialPorts.COM1, 57600, Parity.None, 8, StopBits.One);
 
         /*
         public class receiver
@@ -72,17 +76,43 @@ namespace test_bot_netduino
         {
             setup();
             //loop();
-            Loop2();
+            //Loop2();
+            Loop3();
         }
 
-        public static void Loop2()
+        public static void Loop3()
+        {
+            while (true)
+            {
+                byte[] bufferRead = new byte[20];
+                int i = 0;
+                Debug.Print("Recieving...");
+                while (serial.BytesToRead > 0)
+                {
+                    serial.Read(bufferRead, 0, bufferRead.Length);
+                    i++;
+                }
+                char[] cc = Encoding.UTF8.GetChars(bufferRead, 0, bufferRead.Length);
+                cc[i] = '\0';
+                string data = new string(cc);
+                int heading = Convert.ToInt32(data);
+
+
+                Debug.Print("I got: " + heading);
+
+                Debug.Print("Complete...");
+
+            }
+        }
+
+        /*public static void Loop2()
         {
             while (true)
             {
                 Beacon.Location();
                 Thread.Sleep(2000);
             }
-        }
+        }*/
 
         public static void loop()
         {
@@ -221,7 +251,9 @@ namespace test_bot_netduino
         public static int setup()
         {
             int error = 0;
-            Thread.Sleep(10000);
+            //Thread.Sleep(10000);
+            serial.Open();
+            Debug.Print("Serial open...");
             //Enter setup statments here
             //Receiver.initialize();
             //var scout = new Receiver();
