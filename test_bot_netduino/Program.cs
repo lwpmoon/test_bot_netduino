@@ -42,8 +42,7 @@ namespace test_bot_netduino
 
         //static Receiver Beacon = new Receiver();
 
-        static SerialPort serial = new SerialPort(SerialPorts.COM1, 57600, Parity.None, 8, StopBits.One);
-
+        static SerialPort dataLine = new SerialPort(SerialPorts.COM1, 57600);
         /*
         public class receiver
         {
@@ -77,7 +76,46 @@ namespace test_bot_netduino
             setup();
             //loop();
             //Loop2();
-            Loop3();
+            //Loop3();
+            Loop4();
+        }
+
+        public static void Loop4()
+        {
+            while (true)
+            {
+                // wait a little for the buffer to fill
+                Thread.Sleep(100);
+
+                // create an array for the incoming bytes
+                byte[] bytes = new byte[dataLine.BytesToRead];
+                // read the bytes
+                dataLine.Read(bytes, 0, bytes.Length);
+                // convert the bytes into a string
+                //string line = Encoding.UTF8.GetString(bytes);
+                string line = bytes.ToString();
+
+                // write the received bytes, as a string, to the console
+                Debug.Print("echo: " + line);
+
+            }
+        }
+
+        static void serial_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            // wait a little for the buffer to fill
+            Thread.Sleep(100);
+
+            // create an array for the incoming bytes
+            byte[] bytes = new byte[dataLine.BytesToRead];
+            // read the bytes
+            dataLine.Read(bytes, 0, bytes.Length);
+            // convert the bytes into a string
+            //string line = Encoding.UTF8.GetString(bytes);
+            string line = bytes.ToString();
+
+            // write the received bytes, as a string, to the console
+            Debug.Print("echo: " + line);
         }
 
         public static void Loop3()
@@ -87,13 +125,13 @@ namespace test_bot_netduino
                 byte[] bufferRead = new byte[20];
                 int i = 0;
                 Debug.Print("Recieving...");
-                while (serial.BytesToRead > 0)
+                while (dataLine.BytesToRead > 0)//While data available
                 {
-                    serial.Read(bufferRead, 0, bufferRead.Length);
+                    dataLine.Read(bufferRead, 0, bufferRead.Length);
                     i++;
                 }
                 char[] cc = Encoding.UTF8.GetChars(bufferRead, 0, bufferRead.Length);
-                cc[i] = '\0';
+                //cc[i] = '\0';
                 string data = new string(cc);
                 int heading = Convert.ToInt32(data);
 
@@ -252,7 +290,7 @@ namespace test_bot_netduino
         {
             int error = 0;
             //Thread.Sleep(10000);
-            serial.Open();
+            dataLine.Open();
             Debug.Print("Serial open...");
             //Enter setup statments here
             //Receiver.initialize();
