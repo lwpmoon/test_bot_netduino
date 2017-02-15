@@ -32,6 +32,7 @@
   </PropertyGroup>
   <Import Project="$(NetMfTargetsBaseDir)$(TargetFrameworkVersion)\CSharp.Targets" />
   <ItemGroup>
+    <Compile Include="HMC5883.cs" />
     <Compile Include="I2CBus.cs" />
     <Compile Include="MotorShieldDriver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -17,6 +17,7 @@ using TA.NetMF;
 namespace test_bot_netduino
 {
     public class Program
+
     {
         public static bool readyy = false;
         public static int sensorValue = 0, oldSenV = 0;
@@ -39,6 +40,7 @@ namespace test_bot_netduino
         static AnalogInput irPin = new AnalogInput(AnalogChannels.ANALOG_PIN_A0);
         static AnalogInput activePin = new AnalogInput(AnalogChannels.ANALOG_PIN_A2);
 
+        static HMC5883L sensor = new HMC5883L();
 
         //static Receiver Beacon = new Receiver();
 
@@ -77,7 +79,24 @@ namespace test_bot_netduino
             //loop();
             //Loop2();
             //Loop3();
-            Loop4();
+            //Loop4();
+            compassTest();
+        }
+
+        public static void compassTest()
+        {
+            while (true)
+            {
+                // Einlesen
+                sensor.ReadMagnetic();
+                // Ergebnisse ausgeben
+                Debug.Print("Raw Measurement: X " + sensor.AxisX +
+                            "\tY" + sensor.AxisY +
+                            "\tZ" + sensor.AxisZ);
+
+                // Kurz warten
+                Thread.Sleep(100);
+            }
         }
 
         public static void Loop4()
