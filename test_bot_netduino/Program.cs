@@ -11,6 +11,8 @@ using RockSatC_2016.Utility;
 using SecretLabs.NETMF.Hardware;
 using SecretLabs.NETMF.Hardware.Netduino;
 
+using System.Diagnostics;
+
 using TA.NetMF;
 
 
@@ -34,13 +36,12 @@ namespace test_bot_netduino
         static PWM leftPWM = new PWM(PWMChannels.PWM_PIN_D3, frequency, 1, false);
         static OutputPort rightDir = new OutputPort(Pins.GPIO_PIN_D13, false);
         static PWM rightPWM = new PWM(PWMChannels.PWM_PIN_D11, frequency, 1, false);
-
         
         
         static AnalogInput irPin = new AnalogInput(AnalogChannels.ANALOG_PIN_A0);
         static AnalogInput activePin = new AnalogInput(AnalogChannels.ANALOG_PIN_A2);
 
-        static HMC5883L sensor = new HMC5883L();
+        static HMC5883L compass = new HMC5883L();
 
         //static Receiver Beacon = new Receiver();
 
@@ -75,26 +76,20 @@ namespace test_bot_netduino
 
         public static void Main()
         {
-            setup();
+            //setup();
             //loop();
             //Loop2();
             //Loop3();
             //Loop4();
-            compassTest();
+            CompassTest();
         }
 
-        public static void compassTest()
+        public static void CompassTest()
         {
             while (true)
             {
-                // Einlesen
-                sensor.ReadMagnetic();
-                // Ergebnisse ausgeben
-                Debug.Print("Raw Measurement: X " + sensor.AxisX +
-                            "\tY" + sensor.AxisY +
-                            "\tZ" + sensor.AxisZ);
-
-                // Kurz warten
+                //compass.ReadRaw();
+                compass.UpdateHeading();
                 Thread.Sleep(100);
             }
         }
